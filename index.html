@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>du schaffst das schon</title>
+
+    <!-- styles -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    />
+
+    <!-- scripts -->
+    <script
+        defer
+        src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+        defer
+        src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+
+<body x-data="timestamps">
+    <h1>hello <span x-text="name">du</span></h1>
+
+    <button x-on:click="data.push(new Date())">(re-) start</button>
+    <button x-on:click="data = []">clear</button>
+
+    <div>
+        <div x-ref="chart"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
