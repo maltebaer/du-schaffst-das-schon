@@ -26,6 +26,10 @@ document.addEventListener('alpine:init', () => {
                 })
             },
 
+            remove(index) {
+                this.data.splice(index, 1)
+            },
+
             getTimestampDifferences(data) {
                 if (data.length === 0) {
                     return []

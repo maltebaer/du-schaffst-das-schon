@@ -32,9 +32,10 @@
     </section>
 
     <article class="chart" x-cloak>
-        <template x-for="value in values">
+        <template x-for="(value, index) in values">
             <div class="bar" :style="`--height: ${getHours(value.y)/4}rem;`">
                 <div class="label" x-text="getDisplayValue(value.y)"></div>
+                <button x-on:click="remove(index)">x</button>
             </div>
         </template>
     </article>
