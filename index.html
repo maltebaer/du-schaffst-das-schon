@@ -20,18 +20,24 @@
         defer
         src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
 
 <body x-data="timestamps">
-    <h1>hello <span x-text="name">du</span></h1>
+    <section>
+        <h1>hello <span x-text="name">du</span></h1>
+        <article class="menu">
+            <button x-on:click="data.push(new Date())">(re-) start</button>
+            <button x-on:click="data = []">clear</button>
+        </article>
+    </section>
 
-    <button x-on:click="data.push(new Date())">(re-) start</button>
-    <button x-on:click="data = []">clear</button>
-
-    <div>
-        <div x-ref="chart"></div>
-    </div>
+    <article class="chart" x-cloak>
+        <template x-for="value in values">
+            <div class="bar" :style="`--height: ${getHours(value.y)/4}rem;`">
+                <div class="label" x-text="getDisplayValue(value.y)"></div>
+            </div>
+        </template>
+    </article>
 
     <script src="app.js"></script>
 </body>

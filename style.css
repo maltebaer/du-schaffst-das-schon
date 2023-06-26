@@ -1,0 +1,43 @@
+/* the props */
+@import "https://unpkg.com/open-props";
+
+/* optional imports that use the props */
+@import "https://unpkg.com/open-props/normalize.min.css";
+@import "https://unpkg.com/open-props/buttons.min.css";
+
+[x-cloak] { display: none !important; }
+
+body {
+    padding: var(--size-fluid-2);
+}
+
+section {
+    text-align: center;
+}
+
+section > article :first-child {
+    margin-right: var(--size-fluid-1);
+}
+
+.chart {
+    margin-top: var(--size-fluid-5);
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.bar {
+    border-radius: var(--radius-2);
+    height: var(--height);
+    background-image: var(--gradient-11);
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    color: var(--gray-1);
+}
